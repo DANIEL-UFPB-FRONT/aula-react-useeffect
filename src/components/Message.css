@@ -1,0 +1,14 @@
+#message-box{
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-radius: 10px;
+    width: 40%;
+    padding: 2%;
+  }
+
+#b1{
+  width:40%;
+  align-self:center;
+}
+  
