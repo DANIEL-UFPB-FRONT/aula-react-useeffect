@@ -21,25 +21,29 @@ function Message() {
       }
 
     useEffect(() => {
-      console.log("Call me on every update including mouting")
+      console.log("Listen to message - Setup code")
+      console.log("New message: ", message)
       return () => {
         // A good example here: https://react.dev/reference/react/useEffect#examples-connecting
-        console.log("Call me on umount") 
+        console.log("Listen to message - Cleanup code") 
+        console.log("Old message: ", message)
       }
-    });
+    }, [message]);
 
-    useEffect(() => {
-      console.log("Call once on mount")
-    }, []);
+    // useEffect(() => {
+    //     console.log("Listen to count - Setup code")
+    //     console.log("Count: ", count)
 
-    useEffect(() => {
-        console.log("Call just when count update")
-    }, [count]);
+    //     return () => {
+    //       console.log("Listen to count - Cleanup code")
+    //         console.log("Old count: ", count)
+    //     }
+    // }, [count]);
 
-    useEffect(() => {
-        console.log("Getting pokemon list...")
-        fetchPokemon()
-    }, []);
+    // useEffect(() => {
+    //     console.log("Getting pokemon list...")
+    //     fetchPokemon()
+    // }, []);
 
     return (
         <div id='message-box'>
